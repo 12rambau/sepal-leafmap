@@ -2,7 +2,7 @@
   "app": {
     "title": "sepal leafmap",
     "footer": "The sky is the limit \u00a9 {}",
-    "banner": "This is a automatically generated application. Remove this banner once your application is ready.",
+    "banner": "This is a wrapper around the leafmap Python librairy. Some functionalities that are bound to jupyter notebook might not work in this interface. Please report issues to https://github.com/12rambau/sepal-leafmap",
     "link": {
       "code": "Code link",
       "wiki": "Documentation and tutorials",
