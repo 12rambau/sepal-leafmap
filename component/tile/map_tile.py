@@ -1,7 +1,7 @@
 """The map displayed in the map application."""
 
 import ipyvuetify as v
-from ipyleaflet import FullScreenControl, WidgetControl, basemaps
+from ipyleaflet import FullScreenControl, basemaps
 from leafmap.leafmap import Map
 from sepal_ui import mapping as sm
 from sepal_ui import sepalwidgets as sw
@@ -20,7 +20,7 @@ class MapTile(sw.Tile):
             else basemaps.CartoDB.Positron
         )
         self.m = Map(basemap=default_basemap, zoom=3)
-        self.m._id = "geemap"
+        self.m._id = "leafmap"
         self.m.add_class(self.m._id)
 
         # don't add the control to the map simply set it to fullscreen
@@ -31,27 +31,5 @@ class MapTile(sw.Tile):
 
         # create the tile
         super().__init__("map_tile", "", [self.m])
-
-    def set_code(self, link):
-        """Add the code link btn to the map."""
-        btn = sm.MapBtn("fa-solid fa-code", href=link, target="_blank")
-        control = WidgetControl(widget=btn, position="bottomleft")
-        self.m.add(control)
-
-        return
-
-    def set_wiki(self, link):
-        """Add the wiki link btn to the map."""
-        btn = sm.MapBtn("fa-solid fa-book-open", href=link, target="_blank")
-        control = WidgetControl(widget=btn, position="bottomleft")
-        self.m.add(control)
-
-        return
-
-    def set_issue(self, link):
-        """Add the code link btn to the map."""
-        btn = sm.MapBtn("fa-solid fa-bug", href=link, target="_blank")
-        control = WidgetControl(widget=btn, position="bottomleft")
-        self.m.add(control)
 
         return
