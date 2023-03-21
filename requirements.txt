@@ -8,3 +8,5 @@ toml
 sepal_ui
 
 # custom libs
+leafmap
+ipywidgets>=8.0.4
